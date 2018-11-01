@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}productos por clientes{% endblock %}
+
+{% block page_content %}
+<div class="page-header">  
+	<p>Listar los productos que compro un cliente </p>
+    {{ wtf.quick_form(form) }}
+</div>
+
+<div>
+<table class= 'table' style= "width:100">
+
+<tr>
+<th> CODIGO</th>
+<th> NOMBRE</th>
+<th> APELLIDO</th>
+<th> PRODUCTO</th>
+<th> PRECIO</th>
+
+
+</tr>
+
+{% for i in lista %}
+<tr>
+<th>{{i[0]}}</th>
+<th>{{i[1]}}</th>
+<th>{{i[2]}}</th>
+<th>{{i[3]}}</th>
+<th>{{i[4]}}</th>
+
+
+</tr>
+
+{% endfor %}
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
